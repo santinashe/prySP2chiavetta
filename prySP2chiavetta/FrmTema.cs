@@ -7,7 +7,7 @@ namespace prySP2chiavetta
 {
     public partial class FrmTema : Form
     {
-        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\basededatos\\Academia.mdb;";
+        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\BasedeDatos\\academia.accdb;";
 
         public FrmTema()
         {
@@ -26,12 +26,12 @@ namespace prySP2chiavetta
             try
             {
                 conn.Open();
-                string query = "SELECT NumeroCantante, NombreCantante FROM Cantantes";
+                string query = "SELECT idCantante, Nombre FROM Cantantes";
                 OleDbDataAdapter da = new OleDbDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                cmbCantantes.DisplayMember = "NombreCantante";
-                cmbCantantes.ValueMember = "NumeroCantante";
+                cmbCantantes.DisplayMember = "Nombre";
+                cmbCantantes.ValueMember = "idCantante";
                 cmbCantantes.DataSource = dt;
             }
             catch (Exception ex)
@@ -73,9 +73,9 @@ namespace prySP2chiavetta
             {
                 conn.Open();
                 // Verificar duplicado
-                string queryCheck = "SELECT COUNT(*) FROM Temas WHERE NumeroTema = ?";
+                string queryCheck = "SELECT COUNT(*) FROM Temas WHERE idTema = ?";
                 OleDbCommand cmdCheck = new OleDbCommand(queryCheck, conn);
-                cmdCheck.Parameters.AddWithValue("@NumeroTema", numeroTema);
+                cmdCheck.Parameters.AddWithValue("@idTema", numeroTema);
                 int count = (int)cmdCheck.ExecuteScalar();
                 if (count > 0)
                 {
@@ -84,12 +84,12 @@ namespace prySP2chiavetta
                 }
 
                 // Insertar
-                string queryInsert = "INSERT INTO Temas (NumeroTema, NombreTema, URLVideo, NumeroCantante) VALUES (?, ?, ?, ?)";
+                string queryInsert = "INSERT INTO Temas (idTema, Nombre, link , idCantante) VALUES (?, ?, ?, ?)";
                 OleDbCommand cmdInsert = new OleDbCommand(queryInsert, conn);
-                cmdInsert.Parameters.AddWithValue("@NumeroTema", numeroTema);
-                cmdInsert.Parameters.AddWithValue("@NombreTema", txtNombreTema.Text.Trim());
-                cmdInsert.Parameters.AddWithValue("@URLVideo", txtURL.Text.Trim());
-                cmdInsert.Parameters.AddWithValue("@NumeroCantante", numeroCantante);
+                cmdInsert.Parameters.AddWithValue("@idTema", numeroTema);
+                cmdInsert.Parameters.AddWithValue("@Nombre", txtNombreTema.Text.Trim());
+                cmdInsert.Parameters.AddWithValue("@link", txtURL.Text.Trim());
+                cmdInsert.Parameters.AddWithValue("@idCantante", numeroCantante);
                 cmdInsert.ExecuteNonQuery();
 
                 MessageBox.Show("Tema guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -108,6 +108,11 @@ namespace prySP2chiavetta
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
+        }
+
+        private void cmbCantantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

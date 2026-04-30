@@ -48,7 +48,7 @@
             this.temasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,20 +58,20 @@
             this.nuevoCantanteToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.cantantesToolStripMenuItem.Name = "cantantesToolStripMenuItem";
-            this.cantantesToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.cantantesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.cantantesToolStripMenuItem.Text = "Cantantes";
             // 
             // nuevoCantanteToolStripMenuItem
             // 
             this.nuevoCantanteToolStripMenuItem.Name = "nuevoCantanteToolStripMenuItem";
-            this.nuevoCantanteToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.nuevoCantanteToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.nuevoCantanteToolStripMenuItem.Text = "Nuevo Cantante";
             this.nuevoCantanteToolStripMenuItem.Click += new System.EventHandler(this.nuevoCantanteToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -81,20 +81,20 @@
             this.nuevoTemaToolStripMenuItem,
             this.verVideoTemaToolStripMenuItem});
             this.temasToolStripMenuItem.Name = "temasToolStripMenuItem";
-            this.temasToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.temasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.temasToolStripMenuItem.Text = "Temas";
             // 
             // nuevoTemaToolStripMenuItem
             // 
             this.nuevoTemaToolStripMenuItem.Name = "nuevoTemaToolStripMenuItem";
-            this.nuevoTemaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.nuevoTemaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.nuevoTemaToolStripMenuItem.Text = "Nuevo Tema";
             this.nuevoTemaToolStripMenuItem.Click += new System.EventHandler(this.nuevoTemaToolStripMenuItem_Click);
             // 
             // verVideoTemaToolStripMenuItem
             // 
             this.verVideoTemaToolStripMenuItem.Name = "verVideoTemaToolStripMenuItem";
-            this.verVideoTemaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.verVideoTemaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.verVideoTemaToolStripMenuItem.Text = "Ver Video Tema";
             this.verVideoTemaToolStripMenuItem.Click += new System.EventHandler(this.verVideoTemaToolStripMenuItem_Click);
             // 
@@ -110,7 +110,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F);
             this.label2.Location = new System.Drawing.Point(0, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(800, 40);
@@ -120,6 +120,7 @@
             // 
             // FrmPrincipal
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 250);
             this.Controls.Add(this.label2);
@@ -127,7 +128,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Academia de Música";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

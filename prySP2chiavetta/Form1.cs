@@ -37,5 +37,10 @@ namespace prySP2chiavetta
             FrmVerVideo frm = new FrmVerVideo();
             frm.ShowDialog();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
