@@ -8,7 +8,9 @@ namespace prySP2chiavetta
     public partial class FrmCantante : Form
     {
         // Cadena de conexión a la base de datos
-        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\basededatos\\Academia.mdb;";
+        
+        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\BasedeDatos\\academia.accdb;";
+        //private string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\\..\\BasedeDatos\\academia.mdb;";
 
         public FrmCantante()
         {
@@ -43,27 +45,37 @@ namespace prySP2chiavetta
                 return;
             }
 
-            OleDbConnection conn = new OleDbConnection(connectionString);
             try
             {
-                conn.Open();
-                // Verificar si el número ya existe
-                string queryCheck = "SELECT COUNT(*) FROM Cantantes WHERE NumeroCantante = ?";
-                OleDbCommand cmdCheck = new OleDbCommand(queryCheck, conn);
-                cmdCheck.Parameters.AddWithValue("@NumeroCantante", numero);
-                int count = (int)cmdCheck.ExecuteScalar();
-                if (count > 0)
+                using (OleDbConnection conn = new OleDbConnection(connectionString))
                 {
-                    MessageBox.Show("Ya existe un cantante con ese número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    conn.Open();
 
-                // Insertar nuevo cantante
-                string queryInsert = "INSERT INTO Cantantes (NumeroCantante, NombreCantante) VALUES (?, ?)";
-                OleDbCommand cmdInsert = new OleDbCommand(queryInsert, conn);
-                cmdInsert.Parameters.AddWithValue("@NumeroCantante", numero);
-                cmdInsert.Parameters.AddWithValue("@NombreCantante", txtNombreCantante.Text.Trim());
-                cmdInsert.ExecuteNonQuery();
+                    // Verificar si el número ya existe
+                    string queryCheck = "SELECT COUNT(*) FROM [Cantantes] WHERE [idCantante] = ?";
+                    using (OleDbCommand cmdCheck = new OleDbCommand(queryCheck, conn))
+                    {
+                        // For OleDb use positional parameters ("?") and provide values in order
+                        cmdCheck.Parameters.Add("?", OleDbType.Integer).Value = numero;
+                        object result = cmdCheck.ExecuteScalar();
+                        int count = Convert.ToInt32(result ?? 0);
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Ya existe un cantante con ese número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Insertar nuevo cantante
+                    string queryInsert = "INSERT INTO [Cantantes] ([idCantante], [Nombre]) VALUES (?, ?)";
+                    using (OleDbCommand cmdInsert = new OleDbCommand(queryInsert, conn))
+                    {
+                        cmdInsert.Parameters.Add("?", OleDbType.Integer).Value = numero;
+                        cmdInsert.Parameters.Add("?", OleDbType.VarWChar).Value = txtNombreCantante.Text.Trim();
+                        cmdInsert.ExecuteNonQuery();
+                    }
+                }
 
                 MessageBox.Show("Cantante guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Limpiar campos
@@ -74,12 +86,11 @@ namespace prySP2chiavetta
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                // Cerrar conexión siempre
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
+        }
+
+        private void FrmCantante_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

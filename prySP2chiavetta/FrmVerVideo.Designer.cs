@@ -27,7 +27,7 @@ namespace prySP2chiavetta
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cantante";
             // 
@@ -37,7 +37,7 @@ namespace prySP2chiavetta
             this.cmbCantantes.FormattingEnabled = true;
             this.cmbCantantes.Location = new System.Drawing.Point(23, 40);
             this.cmbCantantes.Name = "cmbCantantes";
-            this.cmbCantantes.Size = new System.Drawing.Size(300, 24);
+            this.cmbCantantes.Size = new System.Drawing.Size(300, 21);
             this.cmbCantantes.TabIndex = 1;
             this.cmbCantantes.SelectedIndexChanged += new System.EventHandler(this.cmbCantantes_SelectedIndexChanged);
             // 
@@ -46,7 +46,7 @@ namespace prySP2chiavetta
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tema";
             // 
@@ -56,7 +56,7 @@ namespace prySP2chiavetta
             this.cmbTemas.FormattingEnabled = true;
             this.cmbTemas.Location = new System.Drawing.Point(23, 100);
             this.cmbTemas.Name = "cmbTemas";
-            this.cmbTemas.Size = new System.Drawing.Size(300, 24);
+            this.cmbTemas.Size = new System.Drawing.Size(300, 21);
             this.cmbTemas.TabIndex = 3;
             // 
             // btnVerVideo
@@ -76,9 +76,11 @@ namespace prySP2chiavetta
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(600, 400);
             this.webBrowser1.TabIndex = 5;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // FrmVerVideo
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 450);
             this.Controls.Add(this.webBrowser1);
@@ -96,6 +98,7 @@ namespace prySP2chiavetta
             this.Load += new System.EventHandler(this.FrmVerVideo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label1;

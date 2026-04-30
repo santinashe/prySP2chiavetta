@@ -30,7 +30,7 @@ namespace prySP2chiavetta
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de Tema";
             // 
@@ -38,7 +38,7 @@ namespace prySP2chiavetta
             // 
             this.txtNumeroTema.Location = new System.Drawing.Point(23, 40);
             this.txtNumeroTema.Name = "txtNumeroTema";
-            this.txtNumeroTema.Size = new System.Drawing.Size(200, 22);
+            this.txtNumeroTema.Size = new System.Drawing.Size(200, 20);
             this.txtNumeroTema.TabIndex = 1;
             // 
             // label2
@@ -46,7 +46,7 @@ namespace prySP2chiavetta
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre del Tema";
             // 
@@ -54,7 +54,7 @@ namespace prySP2chiavetta
             // 
             this.txtNombreTema.Location = new System.Drawing.Point(23, 100);
             this.txtNombreTema.Name = "txtNombreTema";
-            this.txtNombreTema.Size = new System.Drawing.Size(300, 22);
+            this.txtNombreTema.Size = new System.Drawing.Size(300, 20);
             this.txtNombreTema.TabIndex = 3;
             // 
             // label3
@@ -62,7 +62,7 @@ namespace prySP2chiavetta
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(20, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "URL";
             // 
@@ -70,7 +70,7 @@ namespace prySP2chiavetta
             // 
             this.txtURL.Location = new System.Drawing.Point(23, 160);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(400, 22);
+            this.txtURL.Size = new System.Drawing.Size(400, 20);
             this.txtURL.TabIndex = 5;
             // 
             // label4
@@ -78,7 +78,7 @@ namespace prySP2chiavetta
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Cantante";
             // 
@@ -88,8 +88,9 @@ namespace prySP2chiavetta
             this.cmbCantantes.FormattingEnabled = true;
             this.cmbCantantes.Location = new System.Drawing.Point(23, 220);
             this.cmbCantantes.Name = "cmbCantantes";
-            this.cmbCantantes.Size = new System.Drawing.Size(300, 24);
+            this.cmbCantantes.Size = new System.Drawing.Size(300, 21);
             this.cmbCantantes.TabIndex = 7;
+            this.cmbCantantes.SelectedIndexChanged += new System.EventHandler(this.cmbCantantes_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
@@ -103,6 +104,7 @@ namespace prySP2chiavetta
             // 
             // FrmTema
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 320);
             this.Controls.Add(this.btnGuardar);
@@ -123,6 +125,7 @@ namespace prySP2chiavetta
             this.Load += new System.EventHandler(this.FrmTema_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label1;

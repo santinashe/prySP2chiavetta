@@ -26,7 +26,7 @@ namespace prySP2chiavetta
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(30, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de Cantante";
             // 
@@ -34,7 +34,7 @@ namespace prySP2chiavetta
             // 
             this.txtNumeroCantante.Location = new System.Drawing.Point(33, 50);
             this.txtNumeroCantante.Name = "txtNumeroCantante";
-            this.txtNumeroCantante.Size = new System.Drawing.Size(200, 22);
+            this.txtNumeroCantante.Size = new System.Drawing.Size(200, 20);
             this.txtNumeroCantante.TabIndex = 1;
             this.txtNumeroCantante.TextChanged += new System.EventHandler(this.txtNumeroCantante_TextChanged);
             // 
@@ -43,7 +43,7 @@ namespace prySP2chiavetta
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 17);
+            this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre del Cantante";
             // 
@@ -51,7 +51,7 @@ namespace prySP2chiavetta
             // 
             this.txtNombreCantante.Location = new System.Drawing.Point(33, 110);
             this.txtNombreCantante.Name = "txtNombreCantante";
-            this.txtNombreCantante.Size = new System.Drawing.Size(300, 22);
+            this.txtNombreCantante.Size = new System.Drawing.Size(300, 20);
             this.txtNombreCantante.TabIndex = 3;
             this.txtNombreCantante.TextChanged += new System.EventHandler(this.txtNombreCantante_TextChanged);
             // 
@@ -67,6 +67,7 @@ namespace prySP2chiavetta
             // 
             // FrmCantante
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 220);
             this.Controls.Add(this.btnGuardar);
@@ -80,8 +81,10 @@ namespace prySP2chiavetta
             this.Name = "FrmCantante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Cantante";
+            this.Load += new System.EventHandler(this.FrmCantante_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label1;
