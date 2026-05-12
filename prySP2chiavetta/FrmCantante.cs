@@ -4,18 +4,17 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace prySP2chiavetta
-{
+{    //Cadena coexión Access
     public partial class FrmCantante : Form
     {
-        // Cadena de conexión a la base de datos
+       
         
         private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\BasedeDatos\\academia.accdb;";
-        //private string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\\..\\BasedeDatos\\academia.mdb;";
-
+        
         public FrmCantante()
         {
             InitializeComponent();
-            btnGuardar.Enabled = false; // botón deshabilitado inicialmente
+            btnGuardar.Enabled = false; 
         }
 
         // Validar que los campos tengan datos y activar btnGuardar
@@ -39,7 +38,7 @@ namespace prySP2chiavetta
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Validar que el número sea numérico
-            if (!int.TryParse(txtNumeroCantante.Text.Trim(), out int numero))
+            if (Int32.TryParse(txtNumeroCantante.Text.Trim(), out Int32 numero))
             {
                 MessageBox.Show("El número de cantante debe ser numérico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -55,7 +54,7 @@ namespace prySP2chiavetta
                     string queryCheck = "SELECT COUNT(*) FROM [Cantantes] WHERE [idCantante] = ?";
                     using (OleDbCommand cmdCheck = new OleDbCommand(queryCheck, conn))
                     {
-                        // For OleDb use positional parameters ("?") and provide values in order
+                        //AGREGA UN PARAMETRO PARA VERIFICAR SI EXISTE EL NUMERO DE CANTANTE    
                         cmdCheck.Parameters.Add("?", OleDbType.Integer).Value = numero;
                         object result = cmdCheck.ExecuteScalar();
                         int count = Convert.ToInt32(result ?? 0);
@@ -68,12 +67,13 @@ namespace prySP2chiavetta
                     }
 
                     // Insertar nuevo cantante
-                    string queryInsert = "INSERT INTO [Cantantes] ([idCantante], [Nombre]) VALUES (?, ?)";
+                    string queryInsert = "INSERT INTO [Cantantes] ([idCantante], [Nombre]) VALUES (?, ?)";//AGREGAR UN NUEVO REGISTRO A LA TABLA CANTANTES
                     using (OleDbCommand cmdInsert = new OleDbCommand(queryInsert, conn))
                     {
                         cmdInsert.Parameters.Add("?", OleDbType.Integer).Value = numero;
                         cmdInsert.Parameters.Add("?", OleDbType.VarWChar).Value = txtNombreCantante.Text.Trim();
                         cmdInsert.ExecuteNonQuery();
+                        //"?" marca la posicondel parametro en la consulta, y luego se agrega el valor correspondiente con el tipo de dato adecuado.
                     }
                 }
 

@@ -42,5 +42,10 @@ namespace prySP2chiavetta
         {
 
         }
+
+        private void cantantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

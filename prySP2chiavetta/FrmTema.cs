@@ -48,7 +48,7 @@ namespace prySP2chiavetta
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Validar numérico
-            if (!int.TryParse(txtNumeroTema.Text.Trim(), out int numeroTema))
+            if (Int32.TryParse(txtNumeroTema.Text.Trim(), out Int32 numeroTema))
             {
                 MessageBox.Show("El número de tema debe ser numérico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
