@@ -49,7 +49,7 @@
             this.temasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(693, 39);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,22 +58,23 @@
             this.cantantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoCantanteToolStripMenuItem,
             this.salirToolStripMenuItem});
+            this.cantantesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantantesToolStripMenuItem.Name = "cantantesToolStripMenuItem";
-            this.cantantesToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.cantantesToolStripMenuItem.Size = new System.Drawing.Size(134, 35);
             this.cantantesToolStripMenuItem.Text = "Cantantes";
             this.cantantesToolStripMenuItem.Click += new System.EventHandler(this.cantantesToolStripMenuItem_Click);
             // 
             // nuevoCantanteToolStripMenuItem
             // 
             this.nuevoCantanteToolStripMenuItem.Name = "nuevoCantanteToolStripMenuItem";
-            this.nuevoCantanteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevoCantanteToolStripMenuItem.Size = new System.Drawing.Size(274, 36);
             this.nuevoCantanteToolStripMenuItem.Text = "Nuevo Cantante";
             this.nuevoCantanteToolStripMenuItem.Click += new System.EventHandler(this.nuevoCantanteToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(274, 36);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -82,28 +83,29 @@
             this.temasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoTemaToolStripMenuItem,
             this.verVideoTemaToolStripMenuItem});
+            this.temasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.temasToolStripMenuItem.Name = "temasToolStripMenuItem";
-            this.temasToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.temasToolStripMenuItem.Size = new System.Drawing.Size(94, 35);
             this.temasToolStripMenuItem.Text = "Temas";
             // 
             // nuevoTemaToolStripMenuItem
             // 
             this.nuevoTemaToolStripMenuItem.Name = "nuevoTemaToolStripMenuItem";
-            this.nuevoTemaToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.nuevoTemaToolStripMenuItem.Size = new System.Drawing.Size(267, 36);
             this.nuevoTemaToolStripMenuItem.Text = "Nuevo Tema";
             this.nuevoTemaToolStripMenuItem.Click += new System.EventHandler(this.nuevoTemaToolStripMenuItem_Click);
             // 
             // verVideoTemaToolStripMenuItem
             // 
             this.verVideoTemaToolStripMenuItem.Name = "verVideoTemaToolStripMenuItem";
-            this.verVideoTemaToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.verVideoTemaToolStripMenuItem.Size = new System.Drawing.Size(267, 36);
             this.verVideoTemaToolStripMenuItem.Text = "Ver Video Tema";
             this.verVideoTemaToolStripMenuItem.Click += new System.EventHandler(this.verVideoTemaToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(0, 74);
+            this.label1.Location = new System.Drawing.Point(-141, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1067, 49);
@@ -114,7 +116,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(0, 135);
+            this.label2.Location = new System.Drawing.Point(-167, 315);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1067, 49);
@@ -126,13 +128,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 308);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackgroundImage = global::prySP2chiavetta.Properties.Resources.ChatGPT_Image_12_may_2026__05_52_24_p_m_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(693, 480);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Academia de Música";

@@ -14,6 +14,7 @@ namespace prySP2chiavetta
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTema));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumeroTema = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -28,75 +29,89 @@ namespace prySP2chiavetta
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de Tema";
             // 
             // txtNumeroTema
             // 
-            this.txtNumeroTema.Location = new System.Drawing.Point(23, 40);
+            this.txtNumeroTema.Location = new System.Drawing.Point(76, 56);
+            this.txtNumeroTema.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtNumeroTema.Name = "txtNumeroTema";
-            this.txtNumeroTema.Size = new System.Drawing.Size(200, 20);
+            this.txtNumeroTema.Size = new System.Drawing.Size(363, 27);
             this.txtNumeroTema.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 80);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(157, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre del Tema";
             // 
             // txtNombreTema
             // 
-            this.txtNombreTema.Location = new System.Drawing.Point(23, 100);
+            this.txtNombreTema.Location = new System.Drawing.Point(76, 148);
+            this.txtNombreTema.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtNombreTema.Name = "txtNombreTema";
-            this.txtNombreTema.Size = new System.Drawing.Size(300, 20);
+            this.txtNombreTema.Size = new System.Drawing.Size(547, 27);
             this.txtNombreTema.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 140);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(37, 215);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "URL";
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(23, 160);
+            this.txtURL.Location = new System.Drawing.Point(76, 240);
+            this.txtURL.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(400, 20);
+            this.txtURL.Size = new System.Drawing.Size(547, 27);
             this.txtURL.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 200);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 308);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Cantante";
             // 
             // cmbCantantes
             // 
             this.cmbCantantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCantantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCantantes.FormattingEnabled = true;
-            this.cmbCantantes.Location = new System.Drawing.Point(23, 220);
+            this.cmbCantantes.Location = new System.Drawing.Point(76, 332);
+            this.cmbCantantes.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.cmbCantantes.Name = "cmbCantantes";
-            this.cmbCantantes.Size = new System.Drawing.Size(300, 21);
+            this.cmbCantantes.Size = new System.Drawing.Size(547, 28);
             this.cmbCantantes.TabIndex = 7;
             this.cmbCantantes.SelectedIndexChanged += new System.EventHandler(this.cmbCantantes_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(23, 260);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 422);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 30);
+            this.btnGuardar.Size = new System.Drawing.Size(183, 46);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -104,9 +119,11 @@ namespace prySP2chiavetta
             // 
             // FrmTema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 320);
+            this.BackgroundImage = global::prySP2chiavetta.Properties.Resources.ChatGPT_Image_12_may_2026__05_52_24_p_m_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(705, 492);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbCantantes);
             this.Controls.Add(this.label4);
@@ -116,7 +133,11 @@ namespace prySP2chiavetta
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNumeroTema);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTema";
