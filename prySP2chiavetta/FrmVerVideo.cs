@@ -10,7 +10,7 @@ namespace prySP2chiavetta
     public partial class FrmVerVideo : Form
     {
         private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\BasedeDatos\\academia.accdb;";
-        // pending video id to embed when the document is ready
+    
         private string pendingVideoId = null;
 
         public FrmVerVideo()
@@ -97,6 +97,7 @@ namespace prySP2chiavetta
             OleDbConnection conn = new OleDbConnection(connectionString);
             try
             {
+                
                 conn.Open();
                 string query = "SELECT link FROM Temas WHERE idTema = ?";
                 OleDbCommand cmd = new OleDbCommand(query, conn);

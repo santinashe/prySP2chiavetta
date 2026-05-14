@@ -67,12 +67,12 @@ namespace prySP2chiavetta
                     }
 
                     // Insertar nuevo cantante
-                    string queryInsert = "INSERT INTO [Cantantes] ([idCantante], [Nombre]) VALUES (?, ?)";//AGREGAR UN NUEVO REGISTRO A LA TABLA CANTANTES
-                    using (OleDbCommand cmdInsert = new OleDbCommand(queryInsert, conn))
+                    string n = "INSERT INTO [Cantantes] ([idCantante], [Nombre]) VALUES (?, ?)";//AGREGAR UN NUEVO REGISTRO A LA TABLA CANTANTES
+                    using (OleDbCommand x = new OleDbCommand(n, conn))
                     {
-                        cmdInsert.Parameters.Add("?", OleDbType.Integer).Value = numero;
-                        cmdInsert.Parameters.Add("?", OleDbType.VarWChar).Value = txtNombreCantante.Text.Trim();
-                        cmdInsert.ExecuteNonQuery();
+                        x.Parameters.Add("?", OleDbType.Integer).Value = numero;
+                        x.Parameters.Add("?", OleDbType.VarWChar).Value = txtNombreCantante.Text.Trim();
+                        x.ExecuteNonQuery();
                         //"?" marca la posicondel parametro en la consulta, y luego se agrega el valor correspondiente con el tipo de dato adecuado.
                     }
                 }
